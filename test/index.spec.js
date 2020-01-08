@@ -41,3 +41,33 @@ describe('function isPalindrome for Strings', () => {
         assert.equal(isPalindrome(1), x + ' not a String');
     });
 });
+
+describe('function unique(array)', () => {
+    it('should function unique return unique array [1,2,4,3] ' +
+        'for [1,2,2,4,3,3])', () => {
+        assert.deepStrictEqual(unique([1,2,2,4,3,3]), [1,2,4,3]);
+    });
+
+    it('should function unique return unique array [4] for [4])', () => {
+        assert.deepStrictEqual(unique([4]), [4]);
+    });
+
+    it('should function unique return unique array ["a","b"] for ["a","b","a"])', () => {
+        assert.deepStrictEqual(unique(["a","b","a"]), ["a","b"]);
+    });
+
+    it('should function unique do not return not unique array [1,2,2,5] ' +
+        'for [1,2,2,5,5])', () => {
+        assert.notDeepStrictEqual(unique([1,2,2,5,5]), [1,2,2,5]);
+    });
+
+    it('should function unique do not accept empty arrays, ' +
+        'return false in this case)', () => {
+        assert.notEqual(unique([]), true);
+    });
+
+    it('should function unique accept only arrays like arguments, ' +
+        'return false in this case)', () => {
+        assert.notEqual(unique([]), true);
+    });
+});

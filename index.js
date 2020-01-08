@@ -5,7 +5,10 @@ function isPalindrome(x) {
 }
 
 function unique(arr) {
-    return arr.filter((el, i) => arr.indexOf(el) === i);
+    if (!Array.isArray(arr) || !arr.length)
+        return false;
+     else
+        return arr.filter((el, i) => arr.indexOf(el) === i);
 }
 
 module.exports = {isPalindrome, unique};
