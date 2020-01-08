@@ -11,4 +11,8 @@ function unique(arr) {
         return arr.filter((el, i) => arr.indexOf(el) === i);
 }
 
-module.exports = {isPalindrome, unique};
+const isReallyNaN = (val) => {
+    return Number.isNaN(val);
+};
+
+module.exports = {isPalindrome, unique, isReallyNaN};
