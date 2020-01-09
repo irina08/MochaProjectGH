@@ -18,14 +18,15 @@ Unit tests for those functions you can find in [/test/index.spec.js file](https:
 
 ### Node and npm installation
 For this project you need to have already installed Node.js, npm, Mocha and git.  
-1. Go to the [Node installation page] (https://nodejs.org/en/download/), and. download the Node installer.  
+1. Go to the [Node installation page] (https://nodejs.org/en/download/), and download the Node installer.  
 2.  Once it's done, you can test to see both node and npm functioning by 
 opening terminal and typing node -v and npm -v, which will check 
 the version number.    
+
 [Helpful link Node](https://www.taniarascia.com/how-to-install-and-use-node-js-and-npm-mac-and-windows/)
 
 ### Initialization of local repository
-1.  You need to clone this repo to your local machine. 
+1.  You need to clone this repo to your local machine.  
 In the terminal change the current working directory to the location where 
 you want the cloned directory to be made.  
 Use command: git clone https://github.com/irina08/mochaProjectGH
