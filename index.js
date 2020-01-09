@@ -1,5 +1,5 @@
 function isPalindrome(x) {
-    if (typeof x === 'string')
+    if (typeof x === 'string' && x.split(' ').length === 1)
         return x.toLowerCase() === x.toLowerCase().split('').reverse().join('');
     else return 'Wrong argument';
 }
@@ -11,7 +11,7 @@ function unique(arr) {
         return arr.filter((el, i) => arr.indexOf(el) === i);
 }
 
-const isReallyNaN = (val) => {
+function isReallyNaN(val) {
     return Number.isNaN(val);
 };
 

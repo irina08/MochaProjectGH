@@ -2,33 +2,34 @@ const assert = require('assert');
 const {isPalindrome, unique, isReallyNaN} = require('../index.js');
 
 describe(' Testing function isPalindrome for Strings', () => {
-    it('should function isPalindrome to be true for "a"', () => {
+    it('should function isPalindrome to be true for string "a"', () => {
         assert.equal(isPalindrome('a'), true);
     });
-    it('should function isPalindrome to be true for "1"', () => {
+    it('should function isPalindrome to be true for string "1"', () => {
         assert.equal(isPalindrome('1'), true);
     });
-    it('should function isPalindrome to be true for "aba"', () => {
+    it('should function isPalindrome to be true for palindrome string "aba"', () => {
         assert.equal(isPalindrome('aba'), true);
     });
 
-    it('should function isPalindrome to be true for "Bob"', () => {
+    it('should function isPalindrome to be case insensitive for string "Bob"', () => {
         assert.equal(isPalindrome('Bob'), true);
     });
 
-    it('should function isPalindrome to be true for "Madam"', () => {
-        assert.equal(isPalindrome('Madam'), true);
-    });
-
-    it('should function isPalindrome to be true for ""', () => {
+    it('should function isPalindrome to be true for empty string ""', () => {
         assert.equal(isPalindrome(''), true);
     });
 
-    it('should function isPalindrome to be true for "123.321"', () => {
+    it('should function isPalindrome to be true for string "123.321"', () => {
         assert.equal(isPalindrome('123.321'), true);
     });
 
-    it('should function isPalindrome to be false for "hello"', () => {
+    it('should function isPalindrome do not accept string with more than 1 word ' +
+        '"Was it a car or a cat I saw"', () => {
+        assert.equal(isPalindrome('Was it a car or a cat I saw'), 'Wrong argument');
+    });
+
+    it('should function isPalindrome to be false for non-palindrome string "hello"', () => {
         assert.equal(isPalindrome('hello'), false);
     });
 
@@ -52,11 +53,13 @@ describe('Testing function unique(array)', () => {
         assert.deepStrictEqual(unique([1,2,2,4,3,3]), [1,2,4,3]);
     });
 
-    it('should function unique return unique array [4] for [4]', () => {
+    it('should function unique return unique array for array with 1 element ' +
+        'only, [4] for [4]', () => {
         assert.deepStrictEqual(unique([4]), [4]);
     });
 
-    it('should function unique return unique array ["a","b"] for ["a","b","a"]', () => {
+    it('should function unique return unique string array ["a","b"] ' +
+        'for string ["a","b","a"]', () => {
         assert.deepStrictEqual(unique(["a","b","a"]), ["a","b"]);
     });
 
@@ -69,12 +72,16 @@ describe('Testing function unique(array)', () => {
         assert.equal(unique([]), false);
     });
 
-    it('should function unique do not work with no arguments', () => {
+    it('should function unique do not work with no argument', () => {
         assert.equal(unique(), false);
     });
 
-    it('should function unique accept only arrays like arguments', () => {
+    it('should function unique accept only arrays like arguments, not strings', () => {
         assert.equal(unique('String'), false);
+    });
+
+    it('should function unique accept only arrays like arguments, not numbers', () => {
+        assert.equal(unique(2345), false);
     });
 });
 

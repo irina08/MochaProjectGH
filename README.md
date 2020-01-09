@@ -5,9 +5,9 @@ This project shows how to use a feature-rich JavaScript test framework
 Mocha running on Node.js.  
 In this project we test **3 functions**, which you can find in 
 [index.js file](https://github.com/irina08/mochaProjectGH/blob/master/index.js):  
-- **function  isPalindrome()**, that checks if a given string 
-(case insensitive) is a palindrome. If argument not a String or no argument 
-it will return 'Wrong argument'.
+- **function  isPalindrome()**, that checks if a given one-word string 
+(case insensitive) is a palindrome. If argument not a String or no argument or 
+contains more than 1 word it will return 'Wrong argument'.
 - **function unique()**, which takes an Array and returns it free of duplicates.
 If argument not an array or empty array, or no argument, it will return false.
 Other way it will return array without duplicates.  
