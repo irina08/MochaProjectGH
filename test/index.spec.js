@@ -36,9 +36,20 @@ describe(' Testing function isPalindrome for Strings', () => {
         assert.equal(isPalindrome('123.21'), false);
     });
 
-    it('should function isPalindrome to be false for "1"', () => {
+    it('should function isPalindrome return "Wrong argument" for other data type ' +
+        'than String, for number 1', () => {
         let x = 1;
-        assert.equal(isPalindrome(1), x + ' not a String');
+        assert.equal(isPalindrome(1), 'Wrong argument');
+    });
+
+    it('should function isPalindrome return "Wrong argument" ' +
+        ' for undefined', () => {
+        let x;
+        assert.equal(isPalindrome(x), 'Wrong argument');
+    });
+
+    it('should function isPalindrome return "Wrong argument" without argument', () => {
+        assert.equal(isPalindrome(), 'Wrong argument');
     });
 });
 
@@ -61,14 +72,16 @@ describe('Testing function unique(array)', () => {
         assert.notDeepStrictEqual(unique([1,2,2,5,5]), [1,2,2,5]);
     });
 
-    it('should function unique do not accept empty arrays, ' +
-        'return false in this case', () => {
-        assert.notEqual(unique([]), true);
+    it('should function unique do not accept empty array', () => {
+        assert.equal(unique([]), false);
     });
 
-    it('should function unique accept only arrays like arguments, ' +
-        'return false in this case', () => {
-        assert.notEqual(unique([]), true);
+    it('should function unique do not work with no arguments', () => {
+        assert.equal(unique(), false);
+    });
+
+    it('should function unique accept only arrays like arguments', () => {
+        assert.equal(unique('String'), false);
     });
 });
 
@@ -101,6 +114,10 @@ describe('Testing function isReallyNaN, that returns true only if passed in ' +
 
     it('should function isReallyNaN return false for Boolean value false', () => {
         assert.equal(isReallyNaN(false), false);
+    });
+
+    it('should function isReallyNaN return false for no argument', () => {
+        assert.equal(isReallyNaN(), false);
     });
 
     it('should function isReallyNaN do not return false for value NaN. ' +

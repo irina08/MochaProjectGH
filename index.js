@@ -1,7 +1,7 @@
 function isPalindrome(x) {
     if (typeof x === 'string')
         return x.toLowerCase() === x.toLowerCase().split('').reverse().join('');
-    else return (x + ' not a String');
+    else return 'Wrong argument';
 }
 
 function unique(arr) {
