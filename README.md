@@ -1,9 +1,10 @@
 # Unit testing with Mocha
 
+### Description
 This project shows how to use a feature-rich JavaScript test framework 
 Mocha running on Node.js.  
 In this project we test **3 functions**, which you can find in 
-[index.js file] (https://github.com/irina08/mochaProjectGH/blob/master/index.js):  
+[index.js file](https://github.com/irina08/mochaProjectGH/blob/master/index.js):  
 - function  isPalindrome(), that checks if a given string 
 (case insensitive) is a palindrome. If argument not a String or no argument 
 it will return 'Wrong argument'.
@@ -13,28 +14,32 @@ Other way it will return array without duplicates.
 -  isReallyNaN(), which returns true only if passed in an argument 
 that evaluates to NaN, and returns false otherwise.  
 
-Unit tests for those functions you can find in [/test/index.spec.js file] 
-(https://github.com/irina08/mochaProjectGH/blob/master/test/index.spec.js). 
+Unit tests for those functions you can find in [/test/index.spec.js file](https://github.com/irina08/mochaProjectGH/blob/master/test/index.spec.js). 
 
-### Initialization of local repository and Node, Mocha installation.
-For this project you need to have already installed Node.js, npm, Mocha and git.
-- How to install Node:
+### Node and npm installation
+For this project you need to have already installed Node.js, npm, Mocha and git.  
 1. Go to the [Node installation page] (https://nodejs.org/en/download/), and. download the Node installer.  
 2.  Once it's done, you can test to see both node and npm functioning by 
 opening terminal and typing node -v and npm -v, which will check 
 the version number.    
-- Initialization of local repository:
+[Helpful link Node](https://www.taniarascia.com/how-to-install-and-use-node-js-and-npm-mac-and-windows/)
+
+### Initialization of local repository
 1.  You need to clone this repo to your local machine. 
 In the terminal change the current working directory to the location where 
-you want the cloned directory to be made. 
-use command: git clone https://github.com/irina08/mochaProjectGH
-2. Go to the directory mochaProjectGH.  
+you want the cloned directory to be made.  
+Use command: git clone https://github.com/irina08/mochaProjectGH
+2. Go to the directory 'mochaProjectGH'.  
 3. For initializing a project run command: npm init.  
-- Installation of Mocha:
-1. Run command: npm install mocha
-- Run tests  
+
+### Mocha Installation 
+1. Run command: npm install mocha  
+
+[Helpful link Mocha](https://mochajs.org/)
+
+### How to run tests  
 1. Run command: npm test 
-[Helpful link Node] (https://www.taniarascia.com/how-to-install-and-use-node-js-and-npm-mac-and-windows/)  
-[Helpful link Mocha] (https://mochajs.org/)
+ 
+
 
  
