@@ -38,14 +38,7 @@ describe(' Testing function isPalindrome for Strings', () => {
 
     it('should function isPalindrome return "Wrong argument" for other data type ' +
         'than String, for number 1', () => {
-        let x = 1;
         assert.equal(isPalindrome(1), 'Wrong argument');
-    });
-
-    it('should function isPalindrome return "Wrong argument" ' +
-        ' for undefined', () => {
-        let x;
-        assert.equal(isPalindrome(x), 'Wrong argument');
     });
 
     it('should function isPalindrome return "Wrong argument" without argument', () => {
@@ -114,10 +107,6 @@ describe('Testing function isReallyNaN, that returns true only if passed in ' +
 
     it('should function isReallyNaN return false for Boolean value false', () => {
         assert.equal(isReallyNaN(false), false);
-    });
-
-    it('should function isReallyNaN return false for no argument', () => {
-        assert.equal(isReallyNaN(), false);
     });
 
     it('should function isReallyNaN do not return false for value NaN. ' +
