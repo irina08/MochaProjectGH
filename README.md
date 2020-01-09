@@ -8,10 +8,10 @@ In this project we test **3 functions**, which you can find in
 - **function  isPalindrome()**, that checks if a given string 
 (case insensitive) is a palindrome. If argument not a String or no argument 
 it will return 'Wrong argument'.
-- **unction unique()**, which takes an Array and returns it free of duplicates.
+- **function unique()**, which takes an Array and returns it free of duplicates.
 If argument not an array or empty array, or no argument, it will return false.
 Other way it will return array without duplicates.  
--  **isReallyNaN()**, which returns true only if passed in an argument 
+-  **function isReallyNaN()**, which returns true only if passed in an argument 
 that evaluates to NaN, and returns false otherwise.  
 
 Unit tests for those functions you can find in [/test/index.spec.js file](https://github.com/irina08/mochaProjectGH/blob/master/test/index.spec.js). 
