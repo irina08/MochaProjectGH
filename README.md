@@ -5,20 +5,20 @@ This project shows how to use a feature-rich JavaScript test framework
 Mocha running on Node.js.  
 In this project we test **3 functions**, which you can find in 
 [index.js file](https://github.com/irina08/mochaProjectGH/blob/master/index.js):  
-- function  isPalindrome(), that checks if a given string 
+- **function  isPalindrome()**, that checks if a given string 
 (case insensitive) is a palindrome. If argument not a String or no argument 
 it will return 'Wrong argument'.
-- function unique(), which takes an Array and returns it free of duplicates.
+- **unction unique()**, which takes an Array and returns it free of duplicates.
 If argument not an array or empty array, or no argument, it will return false.
 Other way it will return array without duplicates.  
--  isReallyNaN(), which returns true only if passed in an argument 
+-  **isReallyNaN()**, which returns true only if passed in an argument 
 that evaluates to NaN, and returns false otherwise.  
 
 Unit tests for those functions you can find in [/test/index.spec.js file](https://github.com/irina08/mochaProjectGH/blob/master/test/index.spec.js). 
 
 ### Node and npm installation
 For this project you need to have already installed Node.js, npm, Mocha and git.  
-1. Go to the [Node installation page] (https://nodejs.org/en/download/), and download the Node installer.  
+1. Go to the [Node installation page](https://nodejs.org/en/download/), and download the Node installer.  
 2.  Once it's done, you can test to see both node and npm functioning by 
 opening terminal and typing node -v and npm -v, which will check 
 the version number.    
