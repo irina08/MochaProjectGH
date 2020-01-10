@@ -136,4 +136,26 @@ function countLetters (str) {
     return obj;
 }
 
-module.exports = {isPalindrome, unique, isReallyNaN, howMuchILoveYou, factorial, greet, validatePIN, digitize, countLetters };
+
+/*
+It returns the first element of an array that is not consecutive.
+E.g. If we have an array [1,2,3,4,6,7,8] then 1 then 2 then 3 then 4
+are all consecutive but 6 is not, so that's the first non-consecutive number.
+If the whole array is consecutive it returns null.
+Input: The array always has at least 2 elements1 and all elements are numbers.
+The numbers are also all be unique and in ascending order.
+The numbers could be positive or negative and the first non-consecutive could be either too!
+ */
+function firstNonConsecutive (arr) {
+    if(Array.isArray(arr) && arr.length >=2 && arr.every(el => typeof el === 'number')) {
+        for (let i = 0; i < arr.length - 1; i++) {
+            if (arr[i] + 1 !== arr[i + 1]) {
+                return arr[i + 1];
+            }
+        }
+    }
+    return null;
+}
+
+
+module.exports = {isPalindrome, unique, isReallyNaN, howMuchILoveYou, factorial, greet, validatePIN, digitize, countLetters, firstNonConsecutive  };

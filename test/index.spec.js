@@ -1,23 +1,23 @@
 const assert = require('assert');
-const {isPalindrome, unique, isReallyNaN, howMuchILoveYou, factorial, greet, validatePIN, digitize, countLetters} = require('../index.js');
+const {isPalindrome, unique, isReallyNaN, howMuchILoveYou, factorial, greet, validatePIN, digitize, countLetters, firstNonConsecutive} = require('../index.js');
 
 const {expect} = require('chai');
-const {should} = require('chai');
+//const {should} = require('chai');
 
 //testing with Mocha
 describe('Testing function unique(array)', () => {
     it('should function unique return unique array [1,2,4,3] ' +
-        'for [1,2,2,4,3,3])', () => {
+        'for number array [1,2,2,4,3,3])', () => {
         assert.deepStrictEqual(unique([1,2,2,4,3,3]), [1,2,4,3]);
     });
 
-    it('should function unique return unique array for array with 1 element ' +
+    it('should function unique return unique array for number array with 1 element ' +
         'only, [4] for [4]', () => {
         assert.deepStrictEqual(unique([4]), [4]);
     });
 
     it('should function unique return unique string array ["a","b"] ' +
-        'for string ["a","b","a"]', () => {
+        'for string array ["a","b","a"]', () => {
         assert.deepStrictEqual(unique(["a","b","a"]), ["a","b"]);
     });
 
@@ -91,7 +91,7 @@ describe('Testing function howMuchILoveYou()', () => {
     });
 
     it('should function howMuchILoveYou() return "Please provide number of petals" ' +
-        'for number -1', () => {
+        'for negative number -1', () => {
         expect(howMuchILoveYou(-1)).to.equal("Please provide number of petals");
     });
 
@@ -220,15 +220,15 @@ describe('Testing function greet()', () => {
 
 
 describe('Testing function validatePIN()', () => {
-    it('should function ValidatePIN() return true for valid Pin 1234', () => {
+    it('should function ValidatePIN() return true for valid 4digit Pin 1234', () => {
         expect(validatePIN('1234')).to.be.true;
     });
 
-    it('should function ValidatePIN() return true for valid Pin 123456', () => {
+    it('should function ValidatePIN() return true for valid 6digit Pin 123456', () => {
         expect(validatePIN('123456')).to.be.true;
     });
 
-    it('should function ValidatePIN() return true for valid Pin 0000', () => {
+    it('should function ValidatePIN() return true for valid 4digit Pin 0000', () => {
         expect(validatePIN('0000')).to.be.true;
     });
 
@@ -275,19 +275,24 @@ describe('Testing function digitize()', () => {
         expect(digitize(0)).to.deep.equal([0]);
     });
 
-    it('should function digitize() return [1] for number 1', () => {
+    it('should function digitize() return the digits of given number within ' +
+        'an array of 1 number in reverse order[1] for number 1', () => {
         expect(digitize(1)).to.deep.equal([1]);
     });
 
-    it('should function digitize() return [1,3,5] for number 531', () => {
+    it('should function digitize() return the digits of given number ' +
+        'within an array of positive numbers in reverse order, for [1,3,5] for number 531', () => {
         expect(digitize(531)).to.deep.equal([1,3,5]);
     });
 
-    it('should function digitize() return [0, 1, NaN] for negative number -10', () => {
+    it('should function digitize() return the digits of given number within ' +
+        'an array of negative numbers in reverse order, [0, 1, NaN] for negative number -10', () => {
         expect(digitize(-10)).to.deep.equal([0,1,NaN]);
     });
 
-    it('should function digitize() return [3,2,NaN,3,2] for number 23.23', () => {
+    it('should function digitize() return the digits of given number within ' +
+        'an array of decimal numbers including NaN in reverse order, ' +
+        'for [3,2,NaN,3,2] for number 23.23', () => {
         expect(digitize(23.23)).to.deep.equal([3,2,NaN,3,2]);
     });
 
@@ -320,14 +325,62 @@ describe('Testing function countLetters()', () => {
         expect(countLetters()).to.be.null;
     });
 
-    it('should function countLetters() return { d:1, e:1, h:1, l:3, o:2, r:1, w:1 } for ' +
+    it('should function countLetters() return object for string with letters ' +
+        'only ignore case, { d:1, e:1, h:1, l:3, o:2, r:1, w:1 } for ' +
         'string "Hello World"', () => {
         expect(countLetters("Hello World")).to.eql({d:1, e:1, h:1, l:3, o:2, r:1, w:1});
     });
 
-    it('should function countLetters() return { d:1, e:1, h:1, l:3, o:2, r:1, w:1 } for ' +
+    it('should function countLetters() return object for string ' +
+        'with different characters than letters, { d:1, e:1, h:1, l:3, o:2, r:1, w:1 } for ' +
         'string "Hello23  World [1,2] $?!."', () => {
         expect(countLetters("Hello23  World [1,2] $?!.")).to.eql({d:1, e:1, h:1, l:3, o:2, r:1, w:1});
     });
 });
 
+
+
+describe('Testing function firstNonConsecutive()', () => {
+    it('should function firstNonConsecutive() return null for ' +
+        'the whole consecutive array, for [-1,0,1,2,3,4,5]', () => {
+        expect(firstNonConsecutive([-1,0,1,2,3,4,5])).to.be.null;
+    });
+
+    it('should function firstNonConsecutive() return null with no argument', () => {
+        expect(firstNonConsecutive()).to.be.null;
+    });
+
+    it('should function firstNonConsecutive() return null for argument ' +
+        'different data type than array, for string', () => {
+        expect(firstNonConsecutive("12345")).to.be.null;
+    });
+
+    it('should function firstNonConsecutive() return null for array with length < 2', () => {
+        expect(firstNonConsecutive([0])).to.be.null;
+    });
+
+    it('should function firstNonConsecutive() return null for array with ' +
+        'elements are not numbers, for array ["1", "1", "a"]', () => {
+        expect(firstNonConsecutive(["1", "1", "a"])).to.be.null;
+    });
+
+    it('should function firstNonConsecutive() return first nonconsecutive number ' +
+        'for array with value NaN, NaN for array [-1,NaN,1,3]', () => {
+        expect(firstNonConsecutive([-1,NaN,1,3])).to.be.NaN;
+    });
+
+    it('should function firstNonConsecutive() return first nonconsecutive number ' +
+        'for array with value NaN, -2 for array [-1,-2,NaN,1,3]', () => {
+        expect(firstNonConsecutive([-1,-2,NaN,1,3])).to.equal(-2);
+    });
+
+    it('should function firstNonConsecutive() return first nonconsecutive number ' +
+        'for sorted array with positive numbers, 6 for array [1,2,3,4,6,7,8]', () => {
+        expect(firstNonConsecutive([1,2,3,4,6,7,8])).to.equal(6);
+    });
+
+    it('should function firstNonConsecutive() return first nonconsecutive number ' +
+        'for array with negative and positive numbers, -6 for array [-10, -6, 1,2,3]', () => {
+        expect(firstNonConsecutive([-10, -6, 1,2,3])).to.equal(-6);
+    });
+});
