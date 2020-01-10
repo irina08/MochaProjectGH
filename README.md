@@ -7,13 +7,13 @@ In this project we test **10 functions**, which you can find in
 [index.js file](https://github.com/irina08/mochaProjectGH/blob/master/index.js):  
 - **function  isPalindrome()**, that checks if a given one-word string 
 (case insensitive) is a palindrome. If argument not a String or no argument or 
-contains more than 1 word it will return 'Wrong argument'.
+contains more than 1 word it returns 'Wrong argument'.
 - **function unique()**, which takes an Array and returns it free of duplicates.
-If argument not an array or empty array, or no argument, it will return false.
-Other way it will return array without duplicates;
+If argument not an array or empty array, or no argument, it returns false.
+Other way it returns array without duplicates;
 -  **function isReallyNaN()**, which returns true only if passed in an argument 
 that evaluates to NaN, and returns false otherwise; 
-- **howMuchILoveYou()**, which takes the number of petals in the flower and return 
+- **howMuchILoveYou()**, which takes the number of petals in the flower and returns 
 phase according the number of last petal. Return string 'No petals' if petals <= 0;
 - **factorial()**, which calculates factorial for a given input. If input is below 
 0 or above 12 it throw an exception of type ArgumentOutOfRangeException;
