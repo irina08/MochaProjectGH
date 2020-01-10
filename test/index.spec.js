@@ -271,29 +271,28 @@ describe('Testing function validatePIN()', () => {
 
 
 describe('Testing function digitize()', () => {
-    it('should function digitize() return [0] for number 0', () => {
+    it('should function digitize() return [0] for integer number 0', () => {
         expect(digitize(0)).to.deep.equal([0]);
     });
 
     it('should function digitize() return the digits of given number within ' +
-        'an array of 1 number in reverse order[1] for number 1', () => {
+        'an array of 1 number in reverse order[1] for integer number 1', () => {
         expect(digitize(1)).to.deep.equal([1]);
     });
 
     it('should function digitize() return the digits of given number ' +
-        'within an array of positive numbers in reverse order, for [1,3,5] for number 531', () => {
+        'within an array of positive integer numbers in reverse order, for [1,3,5] for number 531', () => {
         expect(digitize(531)).to.deep.equal([1,3,5]);
     });
 
-    it('should function digitize() return the digits of given number within ' +
-        'an array of negative numbers in reverse order, [0, 1, NaN] for negative number -10', () => {
-        expect(digitize(-10)).to.deep.equal([0,1,NaN]);
+    it('should function digitize() return [] for negative number ' +
+        '[] for negative number -10', () => {
+        expect(digitize(-10)).to.deep.equal([]);
     });
 
-    it('should function digitize() return the digits of given number within ' +
-        'an array of decimal numbers including NaN in reverse order, ' +
-        'for [3,2,NaN,3,2] for number 23.23', () => {
-        expect(digitize(23.23)).to.deep.equal([3,2,NaN,3,2]);
+    it('should function digitize() return [] for float number, ' +
+        'for number 23.23', () => {
+        expect(digitize(23.23)).to.deep.equal([]);
     });
 
     it('should function digitize() return [] for calling function with no arguments', () => {

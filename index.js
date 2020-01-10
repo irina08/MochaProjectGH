@@ -105,12 +105,11 @@ function validatePIN(pin) {
 }
 
 
-/*
-It returns the digits of given number within an array in reverse order.
-In other way return empty array
+/* It returns the digits of given positive integer number within an
+array in reverse order. In other way return empty array.
  */
 function digitize(n) {
-    if (typeof n === 'number' && String(n).length > 0)
+    if (typeof n === 'number' && n >=0 && Number.isInteger(n) && String(n).length > 0)
         return String(n).split('').reverse().map(Number)
     else return [];
 }

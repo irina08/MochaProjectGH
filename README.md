@@ -23,8 +23,8 @@ if the language is not in the database, or in the event of an invalid input;
 - **function validatePIN()**, which return true, if ATM machine Pin Code contains 
 exactly 4 digits or exactly 6 digits. Other way it returns false. 
 It accept only strings;
-- **function digitize()**, which returns the digits of given number within an 
-array in reverse order. In other way it returns empty array;  
+- **function digitize()**, which returns the digits of given positive integer number 
+within an array in reverse order. In other way it returns empty array;  
 - **function countLetters()**, which counts the letters in a string in object 
 notation. Input: a string, case-insensitive, ignore whitespace, and anything 
 not a-z. If input is anything other than a string, it returns null. Output is 
