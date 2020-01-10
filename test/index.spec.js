@@ -1,51 +1,8 @@
 const assert = require('assert');
-const {isPalindrome, unique, isReallyNaN} = require('../index.js');
+const {isPalindrome, unique, isReallyNaN, howMuchILoveYou, factorial, greet} = require('../index.js');
 
-describe(' Testing function isPalindrome for Strings', () => {
-    it('should function isPalindrome to be true for string "a"', () => {
-        assert.equal(isPalindrome('a'), true);
-    });
-    it('should function isPalindrome to be true for string "1"', () => {
-        assert.equal(isPalindrome('1'), true);
-    });
-    it('should function isPalindrome to be true for palindrome string "aba"', () => {
-        assert.equal(isPalindrome('aba'), true);
-    });
+const {expect} = require('chai');
 
-    it('should function isPalindrome to be case insensitive for string "Bob"', () => {
-        assert.equal(isPalindrome('Bob'), true);
-    });
-
-    it('should function isPalindrome to be true for empty string ""', () => {
-        assert.equal(isPalindrome(''), true);
-    });
-
-    it('should function isPalindrome to be true for string "123.321"', () => {
-        assert.equal(isPalindrome('123.321'), true);
-    });
-
-    it('should function isPalindrome do not accept string with more than 1 word ' +
-        '"Was it a car or a cat I saw"', () => {
-        assert.equal(isPalindrome('Was it a car or a cat I saw'), 'Wrong argument');
-    });
-
-    it('should function isPalindrome to be false for non-palindrome string "hello"', () => {
-        assert.equal(isPalindrome('hello'), false);
-    });
-
-    it('should function isPalindrome to be false for "123.21"', () => {
-        assert.equal(isPalindrome('123.21'), false);
-    });
-
-    it('should function isPalindrome return "Wrong argument" for other data type ' +
-        'than String, for number 1', () => {
-        assert.equal(isPalindrome(1), 'Wrong argument');
-    });
-
-    it('should function isPalindrome return "Wrong argument" without argument', () => {
-        assert.equal(isPalindrome(), 'Wrong argument');
-    });
-});
 
 describe('Testing function unique(array)', () => {
     it('should function unique return unique array [1,2,4,3] ' +
@@ -85,6 +42,8 @@ describe('Testing function unique(array)', () => {
     });
 });
 
+
+
 describe('Testing function isReallyNaN, that returns true only if passed in ' +
     'an argument that evaluates to NaN,and returns false otherwise', () => {
 
@@ -119,6 +78,167 @@ describe('Testing function isReallyNaN, that returns true only if passed in ' +
     it('should function isReallyNaN do not return false for value NaN. ' +
         'isReallyNan(NaN) should return true', () => {
         assert.notEqual(isReallyNaN(NaN), false);
+    });
+});
+
+
+
+describe('Testing function howMuchILoveYou()', () => {
+    it('should function howMuchILoveYou() return "Please provide number of petals" ' +
+        'for calling function with no argument', () => {
+
+    });
+
+    it('should function howMuchILoveYou() return "Please provide number of petals" ' +
+        'for number -1', () => {
+
+    });
+
+    it('should function howMuchILoveYou() return "Please provide number of petals" ' +
+        'for number 0', () => {
+
+    });
+
+    it('should function howMuchILoveYou() return "Please provide number of petals" ' +
+        'for not a number argument, String "2"', () => {
+
+    });
+
+    it('should function howMuchILoveYou() return "Please provide number of petals" ' +
+        'for null', () => {
+
+    });
+
+    it('should function howMuchILoveYou() return "I love you" ' +
+        'for 1', () => {
+
+    });
+
+    it('should function howMuchILoveYou() return "a little" ' +
+        'for 2', () => {
+
+    });
+
+    it('should function howMuchILoveYou() return "a lot" ' +
+        'for 9', () => {
+
+    });
+
+    it('should function howMuchILoveYou() return "passionately" ' +
+        'for 10', () => {
+
+    });
+
+    it('should function howMuchILoveYou() return "madly" ' +
+        'for 11', () => {
+
+    });
+
+    it('should function howMuchILoveYou() return "not at all" ' +
+        'for 18', () => {
+
+    });
+});
+
+
+
+describe('Testing function factorial', () => {
+    it('should function factorial return factorial of number 0 equals 1 ', () => {
+
+    });
+
+    it('should function factorial return factorial of number 1 equals 1 ', () => {
+
+    });
+
+    it('should function factorial return factorial of number 5 equals 120 ', () => {
+
+    });
+
+    it('should function factorial return factorial of number 12 equals 479001600', () => {
+
+    });
+
+    it('should function factorial throw RangeError for number 13', () => {
+
+    });
+
+    it('should function factorial throw RangeError for number -1', () => {
+
+    });
+});
+
+
+
+describe('Testing function greet()', () => {
+    it('should function greet return "Welkom" for dutch language, ' +
+        'which exist in our database', () => {
+
+    });
+
+    it('should function greet return "Welcome" for english language, ' +
+        'which exist in our database', () => {
+
+    });
+
+    it('should function greet return "Welcome" for russian language, ' +
+        'which does not exist in our database', () => {
+
+    });
+
+    it('should function greet return "Welcome" for invalid input - ' +
+        'string "Hello",', () => {
+
+    });
+
+    it('should function greet return "Welcome" for no argument,', () => {
+
+    });
+
+    it('should function greet return "Welcome" for data type argument ' +
+        'different than string, for array', () => {
+
+    });
+
+    it('should function greet return "Welcome" for data type argument ' +
+        'different than string, for null', () => {
+
+    });
+});
+
+
+
+describe('Testing function howMuchILoveYou()', () => {
+    it('should function howMuchILoveYou() return "Please provide number of petals" ' +
+        'for calling function with no argument', () => {
+
+    });
+});
+
+
+
+describe('Testing function howMuchILoveYou()', () => {
+    it('should function howMuchILoveYou() return "Please provide number of petals" ' +
+        'for calling function with no argument', () => {
+
+    });
+});
+
+
+
+describe('Testing function howMuchILoveYou()', () => {
+    it('should function howMuchILoveYou() return "Please provide number of petals" ' +
+        'for calling function with no argument', () => {
+
+    });
+});
+
+
+
+describe('Testing function howMuchILoveYou()', () => {
+    it('should function howMuchILoveYou() return "Please provide number of petals" ' +
+        'for calling function with no argument', () => {
+
     });
 });
 
