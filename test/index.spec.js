@@ -1,9 +1,9 @@
 const assert = require('assert');
-const {isPalindrome, unique, isReallyNaN, howMuchILoveYou, factorial, greet, validatePin, digitize} = require('../index.js');
+const {isPalindrome, unique, isReallyNaN, howMuchILoveYou, factorial, greet, validatePin, digitize, divisibleBy} = require('../index.js');
 
 const {expect} = require('chai');
 
-
+//testing with Mocha
 describe('Testing function unique(array)', () => {
     it('should function unique return unique array [1,2,4,3] ' +
         'for [1,2,2,4,3,3])', () => {
@@ -82,7 +82,7 @@ describe('Testing function isReallyNaN, that returns true only if passed in ' +
 });
 
 
-
+//testing with mocha and chai
 describe('Testing function howMuchILoveYou()', () => {
     it('should function howMuchILoveYou() return "Please provide number of petals" ' +
         'for calling function with no argument', () => {
@@ -301,19 +301,83 @@ describe('Testing function digitize()', () => {
 
 
 
-describe('Testing function howMuchILoveYou()', () => {
-    it('should function howMuchILoveYou() return "Please provide number of petals" ' +
-        'for calling function with no argument', () => {
+describe('Testing function divisibleBy()', () => {
+    it('should function divisibleBy() return empty array ' +
+        'for calling function with one argument, divisibleBy(5)', () => {
+
+    });
+
+    it('should function divisibleBy() return empty array ' +
+        'for calling function with no arguments', () => {
+
+    });
+
+    it('should function divisibleBy() return empty array ' +
+        'for calling function with array with different data type than number, ' +
+        'divisible(["2", "1"], 1', () => {
+
+    });
+
+    it('should function divisibleBy() return empty array ' +
+        'for calling function with array where some elements not numbers, ' +
+        'divisible([{1: "j"}, 3], 1', () => {
+
+    });
+
+    it('should function divisibleBy() return empty array ' +
+        'for calling function with first argument not an array, ' +
+        'divisible("12345", 1)', () => {
+
+    });
+
+    it('should function divisibleBy() return 0 ' +
+        'for calling function with empty array, ' +
+        'divisible([], 1)', () => {
+
+    });
+
+    it('should function divisibleBy() return empty array ' +
+        'for calling function with first argument undefined, ' +
+        'divisible(undefined, 5)', () => {
+
+    });
+
+    it('should function divisibleBy() return NaN ' +
+        'for calling function with divisor = undefined, ' +
+        'divisible([2,1,3], undefined)', () => {
+
+    });
+
+    it('should function divisibleBy() return NaN ' +
+        'for calling function with divisor = NaN, ' +
+        'divisible([2,1,3], NaN)', () => {
+
+    });
+
+    it('should function divisibleBy() return NaN ' +
+        'for calling function with divisor different type other than number, ' +
+        'divisible([2,1,3], "1")', () => {
+
+    });
+
+    it('should function divisibleBy() return Infinity ' +
+        'for calling function with divisor = null, ' +
+        'divisible([2,1,3], null)', () => {
+
+    });
+
+    it('should function divisibleBy() return NaN ' +
+        'for calling function with divisor = 0, ' +
+        'divisible([2,1,3], 0)', () => {
+
+    });
+
+    it('should function divisibleBy() return [-3,9,12] ' +
+        'with divisor = 3, for array [-3, 2, -10, 0, 9, 12]', () => {
 
     });
 });
 
 
 
-describe('Testing function howMuchILoveYou()', () => {
-    it('should function howMuchILoveYou() return "Please provide number of petals" ' +
-        'for calling function with no argument', () => {
-
-    });
-});
 

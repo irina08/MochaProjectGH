@@ -115,4 +115,18 @@ function digitize(n) {
 }
 
 
-module.exports = {isPalindrome, unique, isReallyNaN, howMuchILoveYou, factorial, greet, validatePin, digitize };
+/*
+It takes two arguments and returns array of all numbers which are divisible by the given divisor.
+First argument is an array of numbers and the second is the divisor.
+ */
+function divisibleBy(numbers, divisor){
+    if(Array.isArray(numbers) && numbers.every(el => typeof el === 'number') && numbers.length > 0) {
+        if (divisor !== NaN || divisor === undefined || typeof divisor !== 'number') return NaN;
+        if (divisor === null  || divisor === 0) return Infinity;
+        else return numbers.filter((x) => x % divisor === 0);
+    } else if(numbers.length === 0) {
+        return 0;
+    } else return [];
+}
+
+module.exports = {isPalindrome, unique, isReallyNaN, howMuchILoveYou, factorial, greet, validatePin, digitize, divisibleBy };
