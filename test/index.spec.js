@@ -1,7 +1,8 @@
 const assert = require('assert');
-const {isPalindrome, unique, isReallyNaN, howMuchILoveYou, factorial, greet, validatePin, digitize, divisibleBy} = require('../index.js');
+const {isPalindrome, unique, isReallyNaN, howMuchILoveYou, factorial, greet, validatePIN, digitize, countLetters} = require('../index.js');
 
 const {expect} = require('chai');
+const {should} = require('chai');
 
 //testing with Mocha
 describe('Testing function unique(array)', () => {
@@ -82,61 +83,61 @@ describe('Testing function isReallyNaN, that returns true only if passed in ' +
 });
 
 
-//testing with mocha and chai
+//testing with Mocha and Chai
 describe('Testing function howMuchILoveYou()', () => {
     it('should function howMuchILoveYou() return "Please provide number of petals" ' +
         'for calling function with no argument', () => {
-
+        expect(howMuchILoveYou()).to.equal("Please provide number of petals");
     });
 
     it('should function howMuchILoveYou() return "Please provide number of petals" ' +
         'for number -1', () => {
-
+        expect(howMuchILoveYou(-1)).to.equal("Please provide number of petals");
     });
 
     it('should function howMuchILoveYou() return "Please provide number of petals" ' +
         'for number 0', () => {
-
+        expect(howMuchILoveYou(0)).to.equal("Please provide number of petals");
     });
 
     it('should function howMuchILoveYou() return "Please provide number of petals" ' +
         'for not a number argument, String "2"', () => {
-
+        expect(howMuchILoveYou("2")).to.equal("Please provide number of petals");
     });
 
     it('should function howMuchILoveYou() return "Please provide number of petals" ' +
         'for null', () => {
-
+        expect(howMuchILoveYou(null)).to.equal("Please provide number of petals");
     });
 
     it('should function howMuchILoveYou() return "I love you" ' +
         'for 1', () => {
-
+        expect(howMuchILoveYou(1)).to.equal("I love you");
     });
 
     it('should function howMuchILoveYou() return "a little" ' +
         'for 2', () => {
-
+        expect(howMuchILoveYou(2)).to.equal("a little");
     });
 
     it('should function howMuchILoveYou() return "a lot" ' +
         'for 9', () => {
-
+        expect(howMuchILoveYou(9)).to.equal("a lot");
     });
 
     it('should function howMuchILoveYou() return "passionately" ' +
         'for 10', () => {
-
+        expect(howMuchILoveYou(10)).to.equal("passionately");
     });
 
     it('should function howMuchILoveYou() return "madly" ' +
         'for 11', () => {
-
+        expect(howMuchILoveYou(11)).to.equal("madly");
     });
 
     it('should function howMuchILoveYou() return "not at all" ' +
         'for 18', () => {
-
+        expect(howMuchILoveYou(18)).to.equal("not at all");
     });
 });
 
@@ -144,27 +145,37 @@ describe('Testing function howMuchILoveYou()', () => {
 
 describe('Testing function factorial', () => {
     it('should function factorial return factorial of number 0 equals 1 ', () => {
-
+        expect(factorial(0)).to.be.equal(1);
     });
 
     it('should function factorial return factorial of number 1 equals 1 ', () => {
-
+        expect(factorial(1)).to.be.equal(1);
     });
 
     it('should function factorial return factorial of number 5 equals 120 ', () => {
-
+        expect(factorial(5)).to.be.equal(120);
     });
 
     it('should function factorial return factorial of number 12 equals 479001600', () => {
-
+        expect(factorial(12)).to.be.equal(479001600);
     });
 
     it('should function factorial throw RangeError for number 13', () => {
+        let q = factorial(13);
+        expect(q).to.throw(new RangeErro('Range must be between 0 and 12'));
+        //expect(q).to.throw('RangeError');
+        //assert.throws(factorial(13), RangeError, "Range must be between 0 and 12");
+       //expect(factorial(13)).to.throw(new RangeError('Range must be between 0 and 12')).and.equal('Range must be between 0 and 12');
+        //assert.throw(factorial(13), 'Range must be between 0 and 12');
+        //expect(factorial(13)).to.deepEqual(new RangeError('Range must be between 0 and 12'));
+    //should.throws(factorial(-13), RangeError);
+    //expect(factorial(13)).to.throw('Range must be between 0 and 12");
+        //expect(factorial(-10)).to.throw(/RangeError/);
 
     });
 
     it('should function factorial throw RangeError for number -1', () => {
-
+        //assert.throws(factorial(-1), RangeError, "Range must be between 0 and 12");
     });
 });
 
@@ -173,91 +184,87 @@ describe('Testing function factorial', () => {
 describe('Testing function greet()', () => {
     it('should function greet return "Welkom" for dutch language, ' +
         'which exist in our database', () => {
-
+        expect(greet('dutch')).to.be.equal("Welkom");
     });
 
     it('should function greet return "Welcome" for english language, ' +
         'which exist in our database', () => {
-
+        expect(greet('english')).to.be.equal("Welcome");
     });
 
     it('should function greet return "Welcome" for russian language, ' +
         'which does not exist in our database', () => {
-
+        expect(greet('russian')).to.be.equal("Welcome");
     });
 
     it('should function greet return "Welcome" for invalid input - ' +
         'string "Hello",', () => {
-
+        expect(greet('Hello')).to.be.equal("Welcome");
     });
 
     it('should function greet return "Welcome" for no argument,', () => {
-
+        expect(greet()).to.be.equal("Welcome");
     });
 
     it('should function greet return "Welcome" for data type argument ' +
         'different than string, for array', () => {
-
+        expect(greet(123)).to.be.equal("Welcome");
     });
 
     it('should function greet return "Welcome" for data type argument ' +
-        'different than string, for null', () => {
-
+        'different than string, for undefined', () => {
+        expect(greet(undefined)).to.be.equal("Welcome");
     });
 });
 
 
 
-describe('Testing function validatePn()', () => {
-    it('should function ValidatePin() return true for valid Pin 1234', () => {
-
+describe('Testing function validatePIN()', () => {
+    it('should function ValidatePIN() return true for valid Pin 1234', () => {
+        expect(validatePIN('1234')).to.be.true;
     });
 
-    it('should function ValidatePin() return true for valid Pin 123456', () => {
-
+    it('should function ValidatePIN() return true for valid Pin 123456', () => {
+        expect(validatePIN('123456')).to.be.true;
     });
 
-    it('should function ValidatePin() return true for valid Pin 0000', () => {
-
+    it('should function ValidatePIN() return true for valid Pin 0000', () => {
+        expect(validatePIN('0000')).to.be.true;
     });
 
-    it('should function ValidatePin() return false for Pin ".14567" ' +
+    it('should function ValidatePIN() return false for Pin ".14567" ' +
         'which contains characters other than digits', () => {
-
+        expect(validatePIN('.14567')).to.be.false;
     });
 
-    it('should function ValidatePin() return false for Pin "a11b" ' +
+    it('should function ValidatePIN() return false for Pin "a11b" ' +
         'which contains characters other than digits', () => {
-
+        expect(validatePIN('.14567')).to.be.false;
     });
 
-    it('should function ValidatePin() return false for Pin with length less than 4, for Pin "1"', () => {
-
+    it('should function ValidatePIN() return false for Pin with length less than 4, for Pin "1"', () => {
+        expect(validatePIN('1')).to.be.false;
     });
 
-    it('should function ValidatePin() return false for Pin with length more than 6, for Pin "1122334"', () => {
-
+    it('should function ValidatePIN() return false for Pin with length more than 6, for Pin "1122334"', () => {
+        expect(validatePIN('1122334')).to.be.false;
     });
 
-    it('should function ValidatePin() return false for Pin with length 5, for Pin "44553"', () => {
-
+    it('should function ValidatePIN() return false for Pin with length 5, for Pin "44553"', () => {
+        expect(validatePIN('44553')).to.be.false;
     });
 
-    it('should function ValidatePin() return false for Pin with negative digits, for Pin "-44553"', () => {
-
+    it('should function ValidatePIN() return false for Pin with negative digits, for Pin "-44553"', () => {
+        expect(validatePIN('44553')).to.be.false;
     });
 
-    it('should function ValidatePin() return false for Pin with floating digits, for Pin "44.553"', () => {
-
+    it('should function ValidatePIN() return false for calling function with no argument', () => {
+        expect(validatePIN()).to.be.false;
     });
 
-    it('should function ValidatePin() return false for calling function with no argument', () => {
-
-    });
-
-    it('should function ValidatePin() return false for argument different data type than String, ' +
+    it('should function ValidatePIN() return false for argument different data type than String, ' +
         'for Number 44553', () => {
-
+        expect(validatePIN(44553)).to.be.false;
     });
 });
 
@@ -265,119 +272,62 @@ describe('Testing function validatePn()', () => {
 
 describe('Testing function digitize()', () => {
     it('should function digitize() return [0] for number 0', () => {
-
+        expect(digitize(0)).to.deep.equal([0]);
     });
 
     it('should function digitize() return [1] for number 1', () => {
-
+        expect(digitize(1)).to.deep.equal([1]);
     });
 
     it('should function digitize() return [1,3,5] for number 531', () => {
-
+        expect(digitize(531)).to.deep.equal([1,3,5]);
     });
 
-    it('should function digitize() return [-0,1] for number -10', () => {
-
+    it('should function digitize() return [0, 1, NaN] for negative number -10', () => {
+        expect(digitize(-10)).to.deep.equal([0,1,NaN]);
     });
 
-    it('should function digitize() return [] for number 23.23', () => {
-
+    it('should function digitize() return [3,2,NaN,3,2] for number 23.23', () => {
+        expect(digitize(23.23)).to.deep.equal([3,2,NaN,3,2]);
     });
 
     it('should function digitize() return [] for calling function with no arguments', () => {
-
+        expect(digitize()).to.deep.equal([]);
     });
 
     it('should function digitize() return [] for different data type argument, than number ' +
         'for String "10"', () => {
-
+        expect(digitize("10")).to.deep.equal([]);
     });
 
     it('should function digitize() return [] for different data type argument, than number ' +
         'for undefined', () => {
-
+        let x;
+        expect(digitize(x)).to.deep.equal([]);
     });
 });
 
 
 
-describe('Testing function divisibleBy()', () => {
-    it('should function divisibleBy() return empty array ' +
-        'for calling function with one argument, divisibleBy(5)', () => {
-
+describe('Testing function countLetters()', () => {
+    it('should function countLetters() return null for argument with different ' +
+        'data type, than string, for array ["a", "b", "c"]', () => {
+        expect(countLetters(["a", "b", "c"])).to.be.null;
     });
 
-    it('should function divisibleBy() return empty array ' +
-        'for calling function with no arguments', () => {
-
+    it('should function countLetters() return null for calling function ' +
+        'with no argument', () => {
+        expect(countLetters()).to.be.null;
     });
 
-    it('should function divisibleBy() return empty array ' +
-        'for calling function with array with different data type than number, ' +
-        'divisible(["2", "1"], 1', () => {
-
+    it('should function countLetters() return { d:1, e:1, h:1, l:3, o:2, r:1, w:1 } for ' +
+        'string "Hello World"', () => {
+        expect(countLetters("Hello World")).to.eql({d:1, e:1, h:1, l:3, o:2, r:1, w:1});
     });
 
-    it('should function divisibleBy() return empty array ' +
-        'for calling function with array where some elements not numbers, ' +
-        'divisible([{1: "j"}, 3], 1', () => {
-
-    });
-
-    it('should function divisibleBy() return empty array ' +
-        'for calling function with first argument not an array, ' +
-        'divisible("12345", 1)', () => {
-
-    });
-
-    it('should function divisibleBy() return 0 ' +
-        'for calling function with empty array, ' +
-        'divisible([], 1)', () => {
-
-    });
-
-    it('should function divisibleBy() return empty array ' +
-        'for calling function with first argument undefined, ' +
-        'divisible(undefined, 5)', () => {
-
-    });
-
-    it('should function divisibleBy() return NaN ' +
-        'for calling function with divisor = undefined, ' +
-        'divisible([2,1,3], undefined)', () => {
-
-    });
-
-    it('should function divisibleBy() return NaN ' +
-        'for calling function with divisor = NaN, ' +
-        'divisible([2,1,3], NaN)', () => {
-
-    });
-
-    it('should function divisibleBy() return NaN ' +
-        'for calling function with divisor different type other than number, ' +
-        'divisible([2,1,3], "1")', () => {
-
-    });
-
-    it('should function divisibleBy() return Infinity ' +
-        'for calling function with divisor = null, ' +
-        'divisible([2,1,3], null)', () => {
-
-    });
-
-    it('should function divisibleBy() return NaN ' +
-        'for calling function with divisor = 0, ' +
-        'divisible([2,1,3], 0)', () => {
-
-    });
-
-    it('should function divisibleBy() return [-3,9,12] ' +
-        'with divisor = 3, for array [-3, 2, -10, 0, 9, 12]', () => {
-
+    it('should function countLetters() return { d:1, e:1, h:1, l:3, o:2, r:1, w:1 } for ' +
+        'string "Hello23  World [1,2] $?!."', () => {
+        expect(countLetters("Hello23  World [1,2] $?!.")).to.eql({d:1, e:1, h:1, l:3, o:2, r:1, w:1});
     });
 });
-
-
-
 

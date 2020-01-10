@@ -60,7 +60,9 @@ throw an exception of type ArgumentOutOfRangeException
  */
 function factorial(n)
 {
-    if (n < 0 || n > 12) throw new RangeError("Range must be between 0 and 12");
+    if (n < 0 || n > 12) {
+        throw new RangeError('Range must be between 0 and 12');
+    }
     return (n > 0) ? n * factorial(n - 1) : 1;
 }
 
@@ -103,7 +105,6 @@ function validatePIN(pin) {
 }
 
 
-
 /*
 It returns the digits of given number within an array in reverse order.
 In other way return empty array
@@ -114,19 +115,25 @@ function digitize(n) {
     else return [];
 }
 
-
-/*
-It takes two arguments and returns array of all numbers which are divisible by the given divisor.
-First argument is an array of numbers and the second is the divisor.
+/* It counts the letters in a string in object notation.
+Input
+A string. Case-insensitive. Ignore whitespace. Ignore anything not a-z.
+If input is anything other than a string, it should return null
+Output
+Should be an object of the letters and how often they show up. e.g. { d:1 e:1 h:1 l:3 o:2 r:1 w:1 }
  */
-function divisibleBy(numbers, divisor){
-    if(Array.isArray(numbers) && numbers.every(el => typeof el === 'number') && numbers.length > 0) {
-        if (divisor !== NaN || divisor === undefined || typeof divisor !== 'number') return NaN;
-        if (divisor === null  || divisor === 0) return Infinity;
-        else return numbers.filter((x) => x % divisor === 0);
-    } else if(numbers.length === 0) {
-        return 0;
-    } else return [];
+function countLetters (str) {
+    if(typeof str !== 'string') return null;
+    let obj = {};
+    str = str.toLowerCase().replace(/[^a-zA-Z]/g,'');
+    for(let i = 0; i < str.length; i++) {
+        if(obj[str[i]]) {
+            obj[str[i]] = obj[str[i]] + 1;
+        } else {
+            obj[str[i]] = 1;
+        }
+    }
+    return obj;
 }
 
-module.exports = {isPalindrome, unique, isReallyNaN, howMuchILoveYou, factorial, greet, validatePin, digitize, divisibleBy };
+module.exports = {isPalindrome, unique, isReallyNaN, howMuchILoveYou, factorial, greet, validatePIN, digitize, countLetters };
