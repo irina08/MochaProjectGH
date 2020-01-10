@@ -33,7 +33,7 @@ function isReallyNaN(val) {
 
 
 /*
-it will return phase for last petal in he flower:
+it will return phase for last petal in the flower:
 'I love you' for first petal; 'a little' for second petal;
 'a lot' for third petal; 'passionately' for fourth petal;
 'madly' for fifth petal; 'not at all' for six petal
@@ -98,7 +98,7 @@ function greet(language) {
 
 /*
 It return true, if ATM machine Pin Code contains exactly 4 digits or exactly 6 digits.
-Other way it will return false. It accept only strings
+Other way it will return false. It accept only strings.
  */
 function validatePIN(pin) {
     return /^(\d{4}|\d{6})$/.test(pin)
