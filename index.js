@@ -94,4 +94,25 @@ function greet(language) {
 }
 
 
-module.exports = {isPalindrome, unique, isReallyNaN, howMuchILoveYou, factorial, greet };
+/*
+It return true, if ATM machine Pin Code contains exactly 4 digits or exactly 6 digits.
+Other way it will return false. It accept only strings
+ */
+function validatePIN(pin) {
+    return /^(\d{4}|\d{6})$/.test(pin)
+}
+
+
+
+/*
+It returns the digits of given number within an array in reverse order.
+In other way return empty array
+ */
+function digitize(n) {
+    if (typeof n === 'number' && String(n).length > 0)
+        return String(n).split('').reverse().map(Number)
+    else return [];
+}
+
+
+module.exports = {isPalindrome, unique, isReallyNaN, howMuchILoveYou, factorial, greet, validatePin, digitize };

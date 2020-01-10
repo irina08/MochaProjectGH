@@ -1,5 +1,5 @@
 const assert = require('assert');
-const {isPalindrome, unique, isReallyNaN, howMuchILoveYou, factorial, greet} = require('../index.js');
+const {isPalindrome, unique, isReallyNaN, howMuchILoveYou, factorial, greet, validatePin, digitize} = require('../index.js');
 
 const {expect} = require('chai');
 
@@ -208,18 +208,93 @@ describe('Testing function greet()', () => {
 
 
 
-describe('Testing function howMuchILoveYou()', () => {
-    it('should function howMuchILoveYou() return "Please provide number of petals" ' +
-        'for calling function with no argument', () => {
+describe('Testing function validatePn()', () => {
+    it('should function ValidatePin() return true for valid Pin 1234', () => {
+
+    });
+
+    it('should function ValidatePin() return true for valid Pin 123456', () => {
+
+    });
+
+    it('should function ValidatePin() return true for valid Pin 0000', () => {
+
+    });
+
+    it('should function ValidatePin() return false for Pin ".14567" ' +
+        'which contains characters other than digits', () => {
+
+    });
+
+    it('should function ValidatePin() return false for Pin "a11b" ' +
+        'which contains characters other than digits', () => {
+
+    });
+
+    it('should function ValidatePin() return false for Pin with length less than 4, for Pin "1"', () => {
+
+    });
+
+    it('should function ValidatePin() return false for Pin with length more than 6, for Pin "1122334"', () => {
+
+    });
+
+    it('should function ValidatePin() return false for Pin with length 5, for Pin "44553"', () => {
+
+    });
+
+    it('should function ValidatePin() return false for Pin with negative digits, for Pin "-44553"', () => {
+
+    });
+
+    it('should function ValidatePin() return false for Pin with floating digits, for Pin "44.553"', () => {
+
+    });
+
+    it('should function ValidatePin() return false for calling function with no argument', () => {
+
+    });
+
+    it('should function ValidatePin() return false for argument different data type than String, ' +
+        'for Number 44553', () => {
 
     });
 });
 
 
 
-describe('Testing function howMuchILoveYou()', () => {
-    it('should function howMuchILoveYou() return "Please provide number of petals" ' +
-        'for calling function with no argument', () => {
+describe('Testing function digitize()', () => {
+    it('should function digitize() return [0] for number 0', () => {
+
+    });
+
+    it('should function digitize() return [1] for number 1', () => {
+
+    });
+
+    it('should function digitize() return [1,3,5] for number 531', () => {
+
+    });
+
+    it('should function digitize() return [-0,1] for number -10', () => {
+
+    });
+
+    it('should function digitize() return [] for number 23.23', () => {
+
+    });
+
+    it('should function digitize() return [] for calling function with no arguments', () => {
+
+    });
+
+    it('should function digitize() return [] for different data type argument, than number ' +
+        'for String "10"', () => {
+
+    });
+
+    it('should function digitize() return [] for different data type argument, than number ' +
+        'for undefined', () => {
 
     });
 });
