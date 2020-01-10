@@ -29,7 +29,11 @@ array in reverse order. In other way it returns empty array;
 notation. Input: a string, case-insensitive, ignore whitespace, and anything 
 not a-z. If input is anything other than a string, it returns null. Output is 
 an object of the letters and how often they show up;
-
+- **function firstNonConsecutive()**, which returns the first element of an array 
+that is not consecutive. If the whole array is consecutive it returns null.
+Input: The array always has at least 2 elements1 and all elements are numbers.
+The numbers are also all be unique and in ascending order.
+The numbers could be positive or negative.
 
 Unit tests for those functions you can find in [/test/index.spec.js file](https://github.com/irina08/mochaProjectGH/blob/master/test/index.spec.js). 
 
