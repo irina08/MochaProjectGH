@@ -139,12 +139,12 @@ function countLetters (str) {
 /*
 It returns the first element of an array that is not consecutive.
 If the whole array is consecutive it returns null.
-Input: The array always has at least 2 elements1 and all elements are numbers.
+Input: The array always has at least 2 elements and all elements are numbers.
 The numbers are also all be unique and in ascending order.
-The numbers could be positive or negative
+The numbers could be positive or negative, and array doesn't contain NaN.
  */
 function firstNonConsecutive (arr) {
-    if(Array.isArray(arr) && arr.length >=2 && arr.every(el => typeof el === 'number')) {
+    if(Array.isArray(arr) && arr.length >=2 && arr.every(el => typeof el === 'number' && !(el !== el) )) {
         for (let i = 0; i < arr.length - 1; i++) {
             if (arr[i] + 1 !== arr[i + 1]) {
                 return arr[i + 1];

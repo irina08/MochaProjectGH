@@ -363,14 +363,9 @@ describe('Testing function firstNonConsecutive()', () => {
         expect(firstNonConsecutive(["1", "1", "a"])).to.be.null;
     });
 
-    it('should function firstNonConsecutive() return first nonconsecutive number ' +
-        'for array with value NaN, NaN for array [-1,NaN,1,3]', () => {
-        expect(firstNonConsecutive([-1,NaN,1,3])).to.be.NaN;
-    });
-
-    it('should function firstNonConsecutive() return first nonconsecutive number ' +
-        'for array with value NaN, -2 for array [-1,-2,NaN,1,3]', () => {
-        expect(firstNonConsecutive([-1,-2,NaN,1,3])).to.equal(-2);
+    it('should function firstNonConsecutive() return null ' +
+        'for array with value NaN, for array [-1,NaN,1,3]', () => {
+        expect(firstNonConsecutive([-1,NaN,1,3])).to.equal(null);
     });
 
     it('should function firstNonConsecutive() return first nonconsecutive number ' +

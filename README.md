@@ -33,7 +33,7 @@ an object of the letters and how often they show up;
 that is not consecutive. If the whole array is consecutive it returns null.
 Input: The array always has at least 2 elements1 and all elements are numbers.
 The numbers are also all be unique and in ascending order.
-The numbers could be positive or negative.
+The numbers could be positive or negative, array doesn't need to contain NaN element.
 
 Unit tests for those functions you can find in [/test/index.spec.js file](https://github.com/irina08/mochaProjectGH/blob/master/test/index.spec.js). 
 
