@@ -2,7 +2,6 @@ const assert = require('assert');
 const {isPalindrome, unique, isReallyNaN, howMuchILoveYou, factorial, greet, validatePIN, digitize, countLetters, firstNonConsecutive} = require('../index.js');
 
 const {expect} = require('chai');
-//const {should} = require('chai');
 
 //testing with Mocha
 describe('Testing function unique(array)', () => {
@@ -160,22 +159,13 @@ describe('Testing function factorial', () => {
         expect(factorial(12)).to.be.equal(479001600);
     });
 
-    it('should function factorial throw RangeError for number 13', () => {
-        let q = factorial(13);
-        expect(q).to.throw(new RangeErro('Range must be between 0 and 12'));
-        //expect(q).to.throw('RangeError');
-        //assert.throws(factorial(13), RangeError, "Range must be between 0 and 12");
-       //expect(factorial(13)).to.throw(new RangeError('Range must be between 0 and 12')).and.equal('Range must be between 0 and 12');
-        //assert.throw(factorial(13), 'Range must be between 0 and 12');
-        //expect(factorial(13)).to.deepEqual(new RangeError('Range must be between 0 and 12'));
-    //should.throws(factorial(-13), RangeError);
-    //expect(factorial(13)).to.throw('Range must be between 0 and 12");
-        //expect(factorial(-10)).to.throw(/RangeError/);
+    it('should function factorial return -1 for number 13 out of range', () => {
+        expect(factorial(13)).to.be.equal(-1);
 
     });
 
-    it('should function factorial throw RangeError for number -1', () => {
-        //assert.throws(factorial(-1), RangeError, "Range must be between 0 and 12");
+    it('should function factorial return -1 for number -1', () => {
+        expect(factorial(-1)).to.be.equal(-1);
     });
 });
 

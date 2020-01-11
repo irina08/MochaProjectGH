@@ -56,14 +56,13 @@ function howMuchILoveYou(nbPetals) {
 
 /*
 It calculates factorial for a given input. If input is below 0 or above 12 it
-throw an exception of type ArgumentOutOfRangeException
+returns -1
  */
 function factorial(n)
 {
-    if (n < 0 || n > 12) {
-        throw new RangeError('Range must be between 0 and 12');
-    }
-    return (n > 0) ? n * factorial(n - 1) : 1;
+    if (n < 0 || n > 12) return -1;
+
+    else return (n > 0) ? n * factorial(n - 1) : 1;
 }
 
 

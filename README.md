@@ -16,7 +16,7 @@ that evaluates to NaN, and returns false otherwise;
 - **howMuchILoveYou()**, which takes the number of petals in the flower and returns 
 phase according the number of last petal. Return string 'No petals' if petals <= 0;
 - **factorial()**, which calculates factorial for a given input. If input is below 
-0 or above 12 it throw an exception of type ArgumentOutOfRangeException;
+0 or above 12 it returns -1;
 - **function greet()**, which takes a parameter 'language' (always a string), and 
 returns a greeting - if we have it in our database. By default language is English 
 if the language is not in the database, or in the event of an invalid input;
