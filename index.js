@@ -4,9 +4,9 @@ If argument not a String or no argument or contains more than 1 word
 it will return 'Wrong argument'.
  */
 function isPalindrome(x) {
-    if (typeof x === 'string' && x.split(' ').length === 1)
-        return x.toLowerCase() === x.toLowerCase().split('').reverse().join('');
-    else return 'Wrong argument';
+  if (typeof x === 'string' && x.split(' ').length === 1)
+    return x.toLowerCase() === x.toLowerCase().split('').reverse().join('');
+  else return 'Wrong argument';
 }
 
 
@@ -16,10 +16,10 @@ or empty array, or no argument, it will return false. Other way it will return
 array without duplicates.
  */
 function unique(arr) {
-    if (!Array.isArray(arr) || !arr.length)
-        return false;
-     else
-        return arr.filter((el, i) => arr.indexOf(el) === i);
+  if (!Array.isArray(arr) || !arr.length)
+    return false;
+  else
+    return arr.filter((el, i) => arr.indexOf(el) === i);
 }
 
 
@@ -28,8 +28,8 @@ It returns true only if passed in an argument that evaluates to NaN,
 and returns false otherwise.
  */
 function isReallyNaN(val) {
-    return Number.isNaN(val);
-};
+  return Number.isNaN(val);
+}
 
 
 /*
@@ -41,16 +41,16 @@ and continue again to the last petal.
 Return string 'No petals' if petals <= 0;
  */
 function howMuchILoveYou(nbPetals) {
-    const str = [
-        'not at all',
-        'I love you',
-        'a little',
-        'a lot',
-        'passionately',
-        'madly'
-    ]
-    if(typeof nbPetals !== 'number' || nbPetals <= 0) return 'Please provide number of petals';
-    else return str[nbPetals % str.length];
+  const str = [
+    'not at all',
+    'I love you',
+    'a little',
+    'a lot',
+    'passionately',
+    'madly'
+  ];
+  if(typeof nbPetals !== 'number' || nbPetals <= 0) return 'Please provide number of petals';
+  else return str[nbPetals % str.length];
 }
 
 
@@ -60,9 +60,9 @@ returns -1
  */
 function factorial(n)
 {
-    if (n < 0 || n > 12) return -1;
+  if (n < 0 || n > 12) return -1;
 
-    else return (n > 0) ? n * factorial(n - 1) : 1;
+  else return (n > 0) ? n * factorial(n - 1) : 1;
 }
 
 
@@ -72,26 +72,26 @@ if we have it in our database. It should default to English if the language
 is not in the database, or in the event of an invalid input.
  */
 function greet(language) {
-    const database = {
-        english: 'Welcome',
-        czech: 'Vitejte',
-        danish: 'Velkomst',
-        dutch: 'Welkom',
-        estonian: 'Tere tulemast',
-        finnish: 'Tervetuloa',
-        flemish: 'Welgekomen',
-        french: 'Bienvenue',
-        german: 'Willkommen',
-        irish: 'Failte',
-        italian: 'Benvenuto',
-        latvian: 'Gaidits',
-        lithuanian: 'Laukiamas',
-        polish: 'Witamy',
-        spanish: 'Bienvenido',
-        swedish: 'Valkommen',
-        welsh: 'Croeso'
-    };
-    return database[language] || database.english;
+  const database = {
+    english: 'Welcome',
+    czech: 'Vitejte',
+    danish: 'Velkomst',
+    dutch: 'Welkom',
+    estonian: 'Tere tulemast',
+    finnish: 'Tervetuloa',
+    flemish: 'Welgekomen',
+    french: 'Bienvenue',
+    german: 'Willkommen',
+    irish: 'Failte',
+    italian: 'Benvenuto',
+    latvian: 'Gaidits',
+    lithuanian: 'Laukiamas',
+    polish: 'Witamy',
+    spanish: 'Bienvenido',
+    swedish: 'Valkommen',
+    welsh: 'Croeso'
+  };
+  return database[language] || database.english;
 }
 
 
@@ -100,7 +100,7 @@ It return true, if ATM machine Pin Code contains exactly 4 digits or exactly 6 d
 Other way it will return false. It accept only strings.
  */
 function validatePIN(pin) {
-    return /^(\d{4}|\d{6})$/.test(pin)
+  return /^(\d{4}|\d{6})$/.test(pin);
 }
 
 
@@ -108,9 +108,9 @@ function validatePIN(pin) {
 array in reverse order. In other way return empty array.
  */
 function digitize(n) {
-    if (typeof n === 'number' && n >=0 && Number.isInteger(n) && String(n).length > 0)
-        return String(n).split('').reverse().map(Number)
-    else return [];
+  if (typeof n === 'number' && n >=0 && Number.isInteger(n) && String(n).length > 0)
+    return String(n).split('').reverse().map(Number);
+  else return [];
 }
 
 /* It counts the letters in a string in object notation.
@@ -121,17 +121,17 @@ Output
 Should be an object of the letters and how often they show up. e.g. { d:1 e:1 h:1 l:3 o:2 r:1 w:1 }
  */
 function countLetters (str) {
-    if(typeof str !== 'string') return null;
-    let obj = {};
-    str = str.toLowerCase().replace(/[^a-zA-Z]/g,'');
-    for(let i = 0; i < str.length; i++) {
-        if(obj[str[i]]) {
-            obj[str[i]] = obj[str[i]] + 1;
-        } else {
-            obj[str[i]] = 1;
-        }
+  if(typeof str !== 'string') return null;
+  let obj = {};
+  str = str.toLowerCase().replace(/[^a-zA-Z]/g,'');
+  for(let i = 0; i < str.length; i++) {
+    if(obj[str[i]]) {
+      obj[str[i]] = obj[str[i]] + 1;
+    } else {
+      obj[str[i]] = 1;
     }
-    return obj;
+  }
+  return obj;
 }
 
 
@@ -143,14 +143,14 @@ The numbers are also all be unique and in ascending order.
 The numbers could be positive or negative, and array doesn't contain NaN.
  */
 function firstNonConsecutive (arr) {
-    if(Array.isArray(arr) && arr.length >=2 && arr.every(el => typeof el === 'number' && !(el !== el) )) {
-        for (let i = 0; i < arr.length - 1; i++) {
-            if (arr[i] + 1 !== arr[i + 1]) {
-                return arr[i + 1];
-            }
-        }
+  if(Array.isArray(arr) && arr.length >=2 && arr.every(el => typeof el === 'number' && !(el !== el) )) {
+    for (let i = 0; i < arr.length - 1; i++) {
+      if (arr[i] + 1 !== arr[i + 1]) {
+        return arr[i + 1];
+      }
     }
-    return null;
+  }
+  return null;
 }
 
 
